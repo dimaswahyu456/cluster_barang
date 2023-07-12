@@ -23,11 +23,10 @@
             <thead>
               <tr>
                 <th>No.</th>
-                <th>Tanggal Rekam</th>
-                <th>Code ICDX</th>
-                <th>Nama Penyakit [Indonesia]</th>
-                <th>Nama Kelompok Layanan</th>
-                <th>Action</th>
+                <th>Tanggal Dijual</th>
+                <th>Barang</th>
+                <th>QTY</th>
+                <th>Stock</th>
 
 
               </tr>
@@ -36,15 +35,10 @@
               @foreach ($res_dc as $item)
               <tr>
                 <td>{{ $loop->index + 1}}</td>
-                <td>{{ $item->tanggal_rekam}}</td>
-                <td>{{ $item->code_icdx}}</td>
-                <td>{{ $item->indonesia_desc}}</td>
-                <td>{{ $item->nama_kelompok_layanan}}</td>
-                <td>
-                  <a class="btn btn-info" href="">Show</a>
-                  <a class="btn btn-danger" href="">Delete</a>
-                  @csrf
-                </td>
+                <td>{{ $item->tanggal}}</td>
+                <td>{{ $item->id_alternatif}}</td>
+                <td>{{ $item->qty}}</td>
+                <td>{{ $item->stock}}</td>
               </tr>
               @endforeach
 

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\RS\DataClusterController;
+use App\Http\Controllers\Anugrah\ClusterController;
 
 use App\Http\Controllers\Anugrah\UserController;
 use App\Http\Controllers\Anugrah\RoleController;
@@ -9,8 +9,6 @@ use App\Http\Controllers\Anugrah\RoleController;
 use App\Http\Controllers\Anugrah\BarangController;
 use App\Http\Controllers\Anugrah\PenjualanController;
 use App\Http\Controllers\Anugrah\AuthController;
-
-use App\Http\Controllers\RS\ClusteringController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -46,13 +44,7 @@ Route::get('penjualan/edit/{id}', [PenjualanController::class, 'edit'])->name('p
 Route::post('penjualan/update/{id}', [PenjualanController::class, 'update'])->name('penjualan.update');
 Route::get('penjualan/delete/{id}', [PenjualanController::class, 'destroy'])->name('penjualan.destroy');
 
-Route::get('data_cluster', [DataClusterController::class, 'index'])->name('data_cluster.list');
-Route::get('data_cluster/show/{id}', [DataClusterController::class, 'show'])->name('data_cluster.show');
-Route::get('data_cluster/add', [DataClusterController::class, 'create'])->name('data_cluster.create');
-Route::post('data_cluster/store', [DataClusterController::class, 'store'])->name('data_cluster.add');
-Route::get('data_cluster/edit/{id}', [DataClusterController::class, 'edit'])->name('data_cluster.edit');
-Route::post('data_cluster/update/{id}', [DataClusterController::class, 'update'])->name('data_cluster.update');
-Route::get('data_cluster/delete/{id}', [DataClusterController::class, 'destroy'])->name('data_cluster.destroy');
+Route::get('data_cluster', [ClusterController::class, 'index'])->name('data_cluster.list');
 
 Route::get('user', [UserController::class, 'index'])->name('user.list');
 Route::get('user/show/{id}', [UserController::class, 'show'])->name('user.show');
