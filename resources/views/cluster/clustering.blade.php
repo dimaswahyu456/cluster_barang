@@ -56,18 +56,18 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Tanggal</th>
-                            <th>Barang</th>
-                            <th>QTY</th>
-                            <th>Stock</th>
+                            <th>Kode Barang</th>
+                            <th>Nama Barang</th>
+                            <th>Total Terjual</th>
+                            <th>Sisa Stock</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($cluster as $point)
                         <tr>
                             <td>{{ $loop->index + 1}}</td>
-                            <td>{{ $point->tanggal}}</td>
-                            <td>{{ $point->id_alternatif}}</td>
+                            <td>{{ $point->kode_barang}}</td>
+                            <td>{{ $point->nama_barang}}</td>
                             <td>{{ $point->qty}}</td>
                             <td>{{ $point->stock}}</td>
                         </tr>

@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class cluster extends Model
 {
     use HasFactory;
-    protected $table = 'cluster_contoh';
+    protected $table = 'data_contoh';
 
     protected $fillable = [
-        'tanggal',
-        'id_alternatif',
+        'kode_barang',
+        'nama_barang',
         'qty',
         'stock'
     ];

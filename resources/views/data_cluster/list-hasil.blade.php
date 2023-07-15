@@ -59,10 +59,10 @@
           <thead>
             <tr>
               <th>No.</th>
-              <th>Tanggal Dijual</th>
-              <th>Barang</th>
-              <th>QTY</th>
-              <th>Stock</th>
+              <th>Kode Barang</th>
+              <th>Nama Barang</th>
+              <th>Total Terjual</th>
+              <th>Sisa Stock</th>
               <th>Cluster</th>
             </tr>
           </thead>
@@ -70,8 +70,8 @@
             @foreach ($res_hc as $item)
             <tr>
               <td>{{ $loop->index + 1}}</td>
-              <td>{{ $item->tanggal}}</td>
-              <td>{{ $item->kode_alternatif}}</td>
+              <td>{{ $item->kode_barang}}</td>
+              <td>{{ $item->nama_barang}}</td>
               <td>{{ $item->qty}}</td>
               <td>{{ $item->stock}}</td>
               <td>{{ $item->cluster}}</td>

@@ -34,10 +34,9 @@
             <thead>
               <tr>
                 <th>No.</th>
-                <th>Tanggal Dijual</th>
-                <th>Barang</th>
-                <th>QTY</th>
-                <th>Stock</th>
+                <th>Kode Barang</th>
+                <th>Total Terjual</th>
+                <th>Sisa Stock</th>
 
 
               </tr>
@@ -46,7 +45,6 @@
               @foreach ($res_normal as $item)
               <tr>
                 <td>{{ $loop->index + 1}}</td>
-                <td>{{ $item->tanggal}}</td>
                 <td>{{ $item->id_alternatif}}</td>
                 <td>{{ $item->qty}}</td>
                 <td>{{ $item->stock}}</td>

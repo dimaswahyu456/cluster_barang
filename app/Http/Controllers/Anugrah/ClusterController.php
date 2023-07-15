@@ -16,14 +16,16 @@ class ClusterController extends Controller
      */
     public function index()
     {
-        $res_dc = DB::select('SELECT c.id_cluster,c.tanggal,b.kode_alternatif,c.qty,c.stock  FROM tbl_cluster c  INNER JOIN tbl_barang b ON b.id_alternatif=c.id_alternatif');
+        $res_dc = DB::select('SELECT * FROM data_contoh');
         $title = 'Data Cluster';
         return view('data_cluster.list-dc', compact('title', 'res_dc'));
     }
 
     public function normalisasi()
     {
-        $res_normal = DB::select('SELECT * FROM tbl_cluster');
+        $res_normal = DB::select('SELECT dc.id,b.id_alternatif,dc.qty,dc.stock
+        FROM `data_contoh` dc
+        INNER JOIN tbl_barang b ON b.kode_alternatif=dc.kode_barang');
         $title = 'Data Cluster Normalisasi';
         return view('data_cluster.list-normal', compact('title', 'res_normal'));
     }
@@ -33,9 +35,9 @@ class ClusterController extends Controller
         $data = cluster::all();
         // Inisialisasi centroid awal
         $centroid = [
-            ['qty' => 10, 'stock' => 1],
-            ['qty' => 90, 'stock' => 1],
-            ['qty' => 10, 'stock' => 4]
+            ['qty' => 258, 'stock' => 17],
+            ['qty' => 189, 'stock' => 8],
+            ['qty' => 0, 'stock' => 2]
         ];
 
         // $k = 5;
@@ -132,7 +134,7 @@ class ClusterController extends Controller
     }
     public function hasil()
     {
-        $res_hc = DB::select('SELECT c.id_cluster,c.tanggal,b.kode_alternatif,c.qty,c.stock,c.cluster  FROM cluster_contoh c  INNER JOIN tbl_barang b ON b.id_alternatif=c.id_alternatif');
+        $res_hc = DB::select('SELECT * FROM data_contoh ORDER BY 6 ASC');
         $title = '';
         return view('data_cluster.list-hasil', compact('title', 'res_hc'));
     }
