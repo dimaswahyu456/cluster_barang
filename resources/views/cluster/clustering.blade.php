@@ -10,11 +10,10 @@
 @section('content')
 @component('common-components.breadcrumb')
 @slot('pagetitle') Tables @endslot
-@slot('title') Hasil Klasterisasi @endslot
+@slot('title') Hasil Hitung K-Means @endslot
 @endcomponent
 
 <div class="container">
-    <h1>Hasil Klasterisasi</h1>
     <br>
 
     <div class="card">
@@ -27,22 +26,16 @@
                     <thead>
                         <tr>
                             <th>Cluster</th>
-                            <th>Indonesia Description</th>
-                            <th>Kecamatan</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Umur</th>
-                            <th>Kelompok Layanan</th>
+                            <th>QTY</th>
+                            <th>Stock</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($clusters as $clusterIndex => $cluster)
                         <tr>
                             <td>{{ $loop->index + 1}}</td>
-                            <td>{{ $centroids[$clusterIndex]['indonesia_desc']}}</td>
-                            <td>{{ $centroids[$clusterIndex]['kecamatan']}}</td>
-                            <td>{{ $centroids[$clusterIndex]['jenis_kelamin']}}</td>
-                            <td>{{ $centroids[$clusterIndex]['umur']}}</td>
-                            <td>{{ $centroids[$clusterIndex]['layanan']}}</td>
+                            <td>{{ $centroids[$clusterIndex]['qty']}}</td>
+                            <td>{{ $centroids[$clusterIndex]['stock']}}</td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -63,26 +56,20 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Tanggal Rekam</th>
-                            <th>Code ICDX</th>
-                            <th>Indonesia Description</th>
-                            <th>Kecamatan</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Umur</th>
-                            <th>Kelompok Layanan</th>
+                            <th>Tanggal</th>
+                            <th>Barang</th>
+                            <th>QTY</th>
+                            <th>Stock</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($cluster as $point)
                         <tr>
                             <td>{{ $loop->index + 1}}</td>
-                            <td>{{ $point->tanggal_rekam}}</td>
-                            <td>{{ $point->code_icdx}}</td>
-                            <td>{{ $point->indonesia_desc}}</td>
-                            <td>{{ $point->kecamatan}}</td>
-                            <td>{{ $point->jenis_kelamin}}</td>
-                            <td>{{ $point->umur}}</td>
-                            <td>{{ $point->layanan}}</td>
+                            <td>{{ $point->tanggal}}</td>
+                            <td>{{ $point->id_alternatif}}</td>
+                            <td>{{ $point->qty}}</td>
+                            <td>{{ $point->stock}}</td>
                         </tr>
                         @endforeach
                     </tbody>

@@ -36,7 +36,7 @@
               <tr>
                 <td>{{ $loop->index + 1}}</td>
                 <td>{{ $item->tanggal}}</td>
-                <td>{{ $item->id_alternatif}}</td>
+                <td>{{ $item->kode_alternatif}}</td>
                 <td>{{ $item->qty}}</td>
                 <td>{{ $item->stock}}</td>
               </tr>

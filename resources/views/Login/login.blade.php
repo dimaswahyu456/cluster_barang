@@ -40,7 +40,7 @@
 
                     <div class="card-body p-4">
                         <div class="text-center mt-2">
-                            <h5 class="text-primary">Sistem Clustering Klinik Pusura</h5>
+                            <h5 class="text-primary">Sistem Clustering CV Anugrah Group</h5>
                             <p class="text-muted"></p>
                         </div>
                         <div class="p-2 mt-4">
@@ -58,8 +58,7 @@
                                 </div>
 
                                 <div class="mt-3 text-end">
-                                    <button class="btn btn-primary w-sm waves-effect waves-light" type="submit">Log
-                                        In</button>
+                                    <button class="btn btn-primary w-sm waves-effect waves-light" type="submit">Log In</button>
                                 </div>
 
                             </form>
@@ -70,7 +69,7 @@
                 <div class="mt-5 text-center">
                     <p>© <script>
                             document.write(new Date().getFullYear())
-                        </script> CLustering. Created by Dimas Wahyu Adi</p>
+                        </script> CLustering. Created by Zahra A'tika Rani</p>
                 </div>
 
             </div>

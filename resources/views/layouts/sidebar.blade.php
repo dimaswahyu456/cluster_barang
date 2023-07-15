@@ -41,17 +41,17 @@
                         <span>@lang('Dashboard')</span>
                     </a>
                 </li>
-
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="uil-blogger-alt"></i>
-                        <span>@lang('Menu')</span>
+                        <span>@lang('Data Master')</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href={{ route('barang.list') }}>@lang('Data Barang')</a></li>
                         <li><a href={{ route('penjualan.list') }}>@lang('Data Penjualan')</a></li>
                     </ul>
                 </li>
+
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="uil-user-circle"></i>
@@ -59,9 +59,14 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href={{ route('data_cluster.list') }}>@lang('Data Cluster')</a></li>
-                        <li><a href={{ route('cluster.clustering') }}>@lang('Hasil Clustering')</a></li>
+                        <li><a href={{ route('data_normalisasi.list') }}>@lang('Data Cluster Normalisasi')</a></li>
+                        @if (Auth::user()->role == '1')
+                        <li><a href={{ route('cluster.clustering') }}>@lang('Perhitungan Clustering')</a></li>
+                        @endif
+                        <li><a href={{ route('data_hasil.list') }}>@lang('Hasil Data Cluster')</a></li>
                     </ul>
                 </li>
+                @if (Auth::user()->role == '1')
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="uil-user-circle"></i>
@@ -72,6 +77,7 @@
                         <li><a href={{ route('role.list') }}>@lang('Roles')</a></li>
                     </ul>
                 </li>
+                @endif
 
                 {{-- <li>
                     <a href="calendar" class="waves-effect">

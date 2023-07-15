@@ -45,7 +45,7 @@
             <br><br>
             <label for="example-text-input" class="col-md-2 col-form-label">No Faktur : </label>
             <div class="col-md-10">
-              <input class="form-control" type="text" name="qty" value="" id="example-text-input" placeholder="No Faktur">
+              <input class="form-control" type="text" name="no_faktur" value="" id="example-text-input" placeholder="No Faktur">
             </div>
             <br><br>
             <label for="example-text-input" class="col-md-2 col-form-label">Barang : </label>

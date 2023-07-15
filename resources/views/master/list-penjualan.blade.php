@@ -13,6 +13,7 @@
 @slot('title') List Penjualan @endslot
 @endcomponent
 
+@if (Auth::user()->role == '1')
 <div class="row">
   <div class="col-lg-12 margin-tb">
     <div class="card">
@@ -23,6 +24,7 @@
     </div>
   </div>
 </div>
+@endif
 
 <div class="row">
   <div class="col-12">
@@ -48,8 +50,10 @@
                 <td>{{ $item->no_faktur}}</td>
                 <td>
                   <a class="btn btn-info" href="{{ route('penjualan.show',$item->id_penjualan) }}">Show</a>
+                  @if (Auth::user()->role == '1')
                   <a class="btn btn-primary" href="{{ route('penjualan.edit',$item->id_penjualan) }}">Edit</a>
                   <a class="btn btn-danger" href="{{ route('penjualan.destroy',$item->id_penjualan) }}">Delete</a>
+                  @endif
                   @csrf
                 </td>
               </tr>

@@ -13,16 +13,18 @@
 @slot('title') List Barang @endslot
 @endcomponent
 
+
+@if (Auth::user()->role == '1')
 <div class="row">
   <div class="col-lg-12 margin-tb">
     <div class="card">
       <div class="card-body">
         <a class="btn btn-success" href="{{ route('barang.create') }}"> Create Barang</a>
-
       </div>
     </div>
   </div>
 </div>
+@endif
 
 <div class="row">
   <div class="col-12">
@@ -52,8 +54,10 @@
                 <td>{{ $item->satuan}}</td>
                 <td>
                   <a class="btn btn-info" href="{{ route('barang.show',$item->id_alternatif) }}">Show</a>
+                  @if (Auth::user()->role == '1')
                   <a class="btn btn-primary" href="{{ route('barang.edit',$item->id_alternatif) }}">Edit</a>
                   <a class="btn btn-danger" href="{{ route('barang.destroy',$item->id_alternatif) }}">Delete</a>
+                  @endif
                   @csrf
                 </td>
               </tr>

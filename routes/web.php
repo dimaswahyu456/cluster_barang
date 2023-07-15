@@ -23,9 +23,6 @@ Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/setting', [AuthController::class, 'setting']);
 Route::post('/edituser', [AuthController::class, 'edituser']);
 
-Route::get('/clustering', 'ClusteringController@index')->name('cluster.clustering');
-Route::post('/clustering', 'ClusteringController@clusterByDate');
-
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('barang', [BarangController::class, 'index'])->name('barang.list');
@@ -45,6 +42,9 @@ Route::post('penjualan/update/{id}', [PenjualanController::class, 'update'])->na
 Route::get('penjualan/delete/{id}', [PenjualanController::class, 'destroy'])->name('penjualan.destroy');
 
 Route::get('data_cluster', [ClusterController::class, 'index'])->name('data_cluster.list');
+Route::get('data_normalisasi', [ClusterController::class, 'normalisasi'])->name('data_normalisasi.list');
+Route::get('data_hasil', [ClusterController::class, 'hasil'])->name('data_hasil.list');
+Route::get('cluster.clustering', [ClusterController::class, 'hitung'])->name('cluster.clustering');
 
 Route::get('user', [UserController::class, 'index'])->name('user.list');
 Route::get('user/show/{id}', [UserController::class, 'show'])->name('user.show');

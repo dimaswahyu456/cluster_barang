@@ -50,7 +50,7 @@ class PenjualanController extends Controller
             'satuan' => 'required'
         ]);
 
-        $resinsert = DB::insert('INSERT INTO tbl_kecamatan (tanggal,no_faktur,id_alternatif,qty,satuan)
+        $resinsert = DB::insert('INSERT INTO tbl_penjualan (tanggal,no_faktur,id_alternatif,qty,satuan)
     VALUES ("' . $request->tanggal . '","' . $request->no_faktur . '","' . $request->id_alternatif . '","' . $request->qty . '","' . $request->satuan . '"); ');
 
         if ($resinsert) {
