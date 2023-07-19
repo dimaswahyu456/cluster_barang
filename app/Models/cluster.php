@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class cluster extends Model
 {
     use HasFactory;
-    protected $table = 'data_contoh';
+    protected $table = 'tbl_cluster';
 
     protected $fillable = [
         'kode_barang',

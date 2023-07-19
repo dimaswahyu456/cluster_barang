@@ -35,17 +35,17 @@
               <tr>
                 <th>No.</th>
                 <th>Kode Barang</th>
+                <th>Nama Barang</th>
                 <th>Total Terjual</th>
                 <th>Sisa Stock</th>
-
-
               </tr>
             </thead>
             <tbody>
               @foreach ($res_normal as $item)
               <tr>
                 <td>{{ $loop->index + 1}}</td>
-                <td>{{ $item->id_alternatif}}</td>
+                <td>{{ $item->kode_barang}}</td>
+                <td>{{ $item->nama_barang}}</td>
                 <td>{{ $item->qty}}</td>
                 <td>{{ $item->stock}}</td>
               </tr>
